@@ -1,3 +1,5 @@
+from datetime import timezone, datetime
+
 from django.contrib.auth.models import User
 from django.core.validators import RegexValidator
 from django.db import models
@@ -23,21 +25,22 @@ class Question(models.Model):
     author = models.ForeignKey(User)
 
     text = models.TextField()
-    date_added = models.DateTimeField()
+    date_added = models.DateTimeField(default=datetime.now)
     # type = models.IntegerField(choices=QuestionTypes.CHOICES, default=QuestionTypes.SINGLE_ANSWER)
-    tags = models.ManyToManyField("Tag")
     points = models.IntegerField(default=1)
 
+    TagValidator = RegexValidator(regex='(\w\w*)( \w\w*)*')
+    tags = models.CharField(max_length=1500, validators=[TagValidator])
 
-class Tag(models.Model):
-    TagValidator = RegexValidator(regex="[a-bA-B_]+")
-    name = models.CharField(max_length=100, validators=[TagValidator])
+    def __str__(self):
+        return self.text
 
 
 class Option(models.Model):
     question = models.ForeignKey(Question)
-    name = models.TextField()
+    name = models.CharField(max_length=1500)
     is_correct = models.BooleanField()
+
 
 # TODO Future Feature
 # class TrueFalseOption(models.Model):
