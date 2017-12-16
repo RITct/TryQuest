@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tryquest.apps.question',
+    'tryquest.apps.quiz',
+    'tryquest.apps.user',
+    'tryquest.web'
+
 ]
 
 MIDDLEWARE = [
