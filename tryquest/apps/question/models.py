@@ -22,7 +22,7 @@ class Question(models.Model):
     #         ("One Word", ONE_WORD)
     #     )
 
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     text = models.TextField()
     date_added = models.DateTimeField(default=datetime.now)
@@ -37,7 +37,7 @@ class Question(models.Model):
 
 
 class Option(models.Model):
-    question = models.ForeignKey(Question)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
     name = models.CharField(max_length=1500)
     is_correct = models.BooleanField()
 
