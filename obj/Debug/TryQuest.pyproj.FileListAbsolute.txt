@@ -1,3 +1,0 @@
-C:\Users\Sidhin S Thomas\Source\Repos\TryQuest\obj\Debug\TryQuest.pyproj.CoreCompileInputs.cache
-C:\Users\Sidhin S Thomas\Source\Repos\TryQuest\bin\Microsoft.PythonTools.WebRole.dll
-C:\Users\Sidhin S Thomas\Source\Repos\TryQuest\bin\wfastcgi.py

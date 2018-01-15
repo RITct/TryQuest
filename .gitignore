@@ -270,3 +270,4 @@ $RECYCLE.BIN/
 # Visual Studio Files
 
 .vs/
+obj/
