@@ -16,6 +16,7 @@
     <UseIISExpress>true</UseIISExpress>
     <IsWindowsApplication>False</IsWindowsApplication>
     <DjangoSettingsModule>tryquest.settings.dev</DjangoSettingsModule>
+    <WebBrowserPort>8989</WebBrowserPort>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
@@ -46,6 +47,9 @@
     <Compile Include="tryquest\web\admin.py" />
     <Compile Include="tryquest\web\apps.py" />
     <Compile Include="tryquest\web\urls.py" />
+    <Compile Include="tryquest\web\views.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tryquest\web\__init__.py" />
     <Compile Include="tryquest\wsgi.py" />
     <Compile Include="tryquest\__init__.py" />
